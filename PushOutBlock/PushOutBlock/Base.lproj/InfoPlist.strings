@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  PushOutBlock
+
+  Created by takashi on 2016/05/29.
+  Copyright © 2016年 Takashi Ikeda. All rights reserved.
+*/
+CFBundleDisplayName = "PushOutBlock";

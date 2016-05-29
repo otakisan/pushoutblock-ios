@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1641E82C1CFAEBDD00FFC1A4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1641E82E1CFAEBDD00FFC1A4 /* InfoPlist.strings */; };
+		1641E8341CFAEE2100FFC1A4 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1641E8331CFAEE2100FFC1A4 /* StringExtensions.swift */; };
+		1641E8351CFAEEC100FFC1A4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1641E8371CFAEEC100FFC1A4 /* Localizable.strings */; };
 		16EC694C1CFACBEE00708292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC694B1CFACBEE00708292 /* AppDelegate.swift */; };
 		16EC694E1CFACBEE00708292 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 16EC694D1CFACBEE00708292 /* GameScene.sks */; };
 		16EC69501CFACBEE00708292 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC694F1CFACBEE00708292 /* GameScene.swift */; };
@@ -36,6 +39,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1641E82B1CFAEBBE00FFC1A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1641E82D1CFAEBDD00FFC1A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1641E82F1CFAEBDF00FFC1A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1641E8331CFAEE2100FFC1A4 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		1641E8361CFAEEC100FFC1A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1641E8381CFAEEC300FFC1A4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		16EC69481CFACBEE00708292 /* PushOutBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushOutBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16EC694B1CFACBEE00708292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16EC694D1CFACBEE00708292 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -78,6 +87,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1641E8321CFAEDDD00FFC1A4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1641E8331CFAEE2100FFC1A4 /* StringExtensions.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		16EC693F1CFACBEE00708292 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +118,7 @@
 		16EC694A1CFACBEE00708292 /* PushOutBlock */ = {
 			isa = PBXGroup;
 			children = (
+				1641E8321CFAEDDD00FFC1A4 /* Utilities */,
 				16EC697D1CFADAF000708292 /* ViewControllers */,
 				16EC694B1CFACBEE00708292 /* AppDelegate.swift */,
 				16EC694D1CFACBEE00708292 /* GameScene.sks */,
@@ -109,6 +127,8 @@
 				16EC69561CFACBEE00708292 /* Assets.xcassets */,
 				16EC69581CFACBEE00708292 /* LaunchScreen.storyboard */,
 				16EC695B1CFACBEE00708292 /* Info.plist */,
+				1641E82E1CFAEBDD00FFC1A4 /* InfoPlist.strings */,
+				1641E8371CFAEEC100FFC1A4 /* Localizable.strings */,
 			);
 			path = PushOutBlock;
 			sourceTree = "<group>";
@@ -226,6 +246,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 16EC693F1CFACBEE00708292;
 			productRefGroup = 16EC69491CFACBEE00708292 /* Products */;
@@ -245,9 +266,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				16EC694E1CFACBEE00708292 /* GameScene.sks in Resources */,
+				1641E8351CFAEEC100FFC1A4 /* Localizable.strings in Resources */,
 				16EC695A1CFACBEE00708292 /* LaunchScreen.storyboard in Resources */,
 				16EC69571CFACBEE00708292 /* Assets.xcassets in Resources */,
 				16EC69551CFACBEE00708292 /* Main.storyboard in Resources */,
+				1641E82C1CFAEBDD00FFC1A4 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1641E8341CFAEE2100FFC1A4 /* StringExtensions.swift in Sources */,
 				16EC69811CFADC0F00708292 /* GameViewController.swift in Sources */,
 				16EC69501CFACBEE00708292 /* GameScene.swift in Sources */,
 				16EC694C1CFACBEE00708292 /* AppDelegate.swift in Sources */,
@@ -310,6 +334,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1641E82E1CFAEBDD00FFC1A4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1641E82D1CFAEBDD00FFC1A4 /* Base */,
+				1641E82F1CFAEBDF00FFC1A4 /* ja */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1641E8371CFAEEC100FFC1A4 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1641E8361CFAEEC100FFC1A4 /* Base */,
+				1641E8381CFAEEC300FFC1A4 /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		16EC69531CFACBEE00708292 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -322,6 +364,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				16EC69591CFACBEE00708292 /* Base */,
+				1641E82B1CFAEBBE00FFC1A4 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -505,6 +548,7 @@
 				16EC69761CFACBEE00708292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16EC69771CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +557,7 @@
 				16EC69791CFACBEE00708292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		16EC697A1CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +566,7 @@
 				16EC697C1CFACBEE00708292 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

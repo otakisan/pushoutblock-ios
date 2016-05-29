@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  PushOutBlock
+
+  Created by takashi on 2016/05/29.
+  Copyright © 2016年 Takashi Ikeda. All rights reserved.
+*/
+"swipe up the blue!" = "swipe up the blue!";
+"Fire !" = "Fire !";
+"Missed !" = "Missed !";
+"Hit !" = "Hit !";
+"WonMessage" = "Won by %@ shots !";

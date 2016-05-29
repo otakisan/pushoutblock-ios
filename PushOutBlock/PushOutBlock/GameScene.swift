@@ -37,7 +37,7 @@ class GameScene: SKScene {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
         //myLabel.text = "Push out the Orange Block! \n 1 Shot Only by swiping up the blue block !"
-        myLabel.text = "swipe up the blue!"
+        myLabel.text = "swipe up the blue!".localized()
         myLabel.fontSize = 100
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         myLabel.position.y -= myLabel.frame.size.height * 2
@@ -137,7 +137,7 @@ class GameScene: SKScene {
                 //self.childNodeWithName("moveNode")?.position.y += 100
                 //self.moveTo(self.childNodeWithName("moveNode")!, to: self.childNodeWithName("targetNode")!)
                 self.moveBy(self.childNodeWithName("moveNode")!, dx: currentTranslateVelocityConverted.x, dy: currentTranslateVelocityConverted.y)
-                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Fire !"
+                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Fire !".localized()
                 
             }
             
@@ -212,8 +212,8 @@ class GameScene: SKScene {
                 //                self.removeChildrenInArray([moveNode])
                 //                createAndAddMovingNode()
                 
-                if (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text == "Fire !" {
-                    (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Missed !"
+                if (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text == "Fire !".localized() {
+                    (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Missed !".localized()
                 }
                 
                 self.trialCount += 1
@@ -239,7 +239,7 @@ class GameScene: SKScene {
                 }
                 resetPositionMovingBlock()
                 
-                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Won by \(self.trialCount) shots !"
+                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "WonMessage".localized(["\(self.trialCount)"])
                 self.trialCount = 0
                 self.trialsLabel?.text = "\(self.trialCount)"
             }
@@ -272,7 +272,7 @@ extension GameScene : SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Hit !"
+        (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Hit !".localized()
         if let node = firstBody.node {
             // 回転して、衝突して、回転して、衝突して、…を細かく繰り返し、ぎりぎり衝突しないところまで続く。
             rotationNode(node)
