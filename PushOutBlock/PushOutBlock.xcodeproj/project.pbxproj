@@ -1,0 +1,528 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16EC694C1CFACBEE00708292 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC694B1CFACBEE00708292 /* AppDelegate.swift */; };
+		16EC694E1CFACBEE00708292 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 16EC694D1CFACBEE00708292 /* GameScene.sks */; };
+		16EC69501CFACBEE00708292 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC694F1CFACBEE00708292 /* GameScene.swift */; };
+		16EC69551CFACBEE00708292 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EC69531CFACBEE00708292 /* Main.storyboard */; };
+		16EC69571CFACBEE00708292 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 16EC69561CFACBEE00708292 /* Assets.xcassets */; };
+		16EC695A1CFACBEE00708292 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16EC69581CFACBEE00708292 /* LaunchScreen.storyboard */; };
+		16EC69651CFACBEE00708292 /* PushOutBlockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC69641CFACBEE00708292 /* PushOutBlockTests.swift */; };
+		16EC69701CFACBEE00708292 /* PushOutBlockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC696F1CFACBEE00708292 /* PushOutBlockUITests.swift */; };
+		16EC69811CFADC0F00708292 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16EC69801CFADC0F00708292 /* GameViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16EC69611CFACBEE00708292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16EC69401CFACBEE00708292 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16EC69471CFACBEE00708292;
+			remoteInfo = PushOutBlock;
+		};
+		16EC696C1CFACBEE00708292 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 16EC69401CFACBEE00708292 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 16EC69471CFACBEE00708292;
+			remoteInfo = PushOutBlock;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16EC69481CFACBEE00708292 /* PushOutBlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushOutBlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		16EC694B1CFACBEE00708292 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		16EC694D1CFACBEE00708292 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		16EC694F1CFACBEE00708292 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		16EC69541CFACBEE00708292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		16EC69561CFACBEE00708292 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		16EC69591CFACBEE00708292 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		16EC695B1CFACBEE00708292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16EC69601CFACBEE00708292 /* PushOutBlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushOutBlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16EC69641CFACBEE00708292 /* PushOutBlockTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushOutBlockTests.swift; sourceTree = "<group>"; };
+		16EC69661CFACBEE00708292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16EC696B1CFACBEE00708292 /* PushOutBlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushOutBlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		16EC696F1CFACBEE00708292 /* PushOutBlockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushOutBlockUITests.swift; sourceTree = "<group>"; };
+		16EC69711CFACBEE00708292 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16EC69801CFADC0F00708292 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		16EC69451CFACBEE00708292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC695D1CFACBEE00708292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC69681CFACBEE00708292 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		16EC693F1CFACBEE00708292 = {
+			isa = PBXGroup;
+			children = (
+				16EC694A1CFACBEE00708292 /* PushOutBlock */,
+				16EC69631CFACBEE00708292 /* PushOutBlockTests */,
+				16EC696E1CFACBEE00708292 /* PushOutBlockUITests */,
+				16EC69491CFACBEE00708292 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		16EC69491CFACBEE00708292 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				16EC69481CFACBEE00708292 /* PushOutBlock.app */,
+				16EC69601CFACBEE00708292 /* PushOutBlockTests.xctest */,
+				16EC696B1CFACBEE00708292 /* PushOutBlockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		16EC694A1CFACBEE00708292 /* PushOutBlock */ = {
+			isa = PBXGroup;
+			children = (
+				16EC697D1CFADAF000708292 /* ViewControllers */,
+				16EC694B1CFACBEE00708292 /* AppDelegate.swift */,
+				16EC694D1CFACBEE00708292 /* GameScene.sks */,
+				16EC694F1CFACBEE00708292 /* GameScene.swift */,
+				16EC69531CFACBEE00708292 /* Main.storyboard */,
+				16EC69561CFACBEE00708292 /* Assets.xcassets */,
+				16EC69581CFACBEE00708292 /* LaunchScreen.storyboard */,
+				16EC695B1CFACBEE00708292 /* Info.plist */,
+			);
+			path = PushOutBlock;
+			sourceTree = "<group>";
+		};
+		16EC69631CFACBEE00708292 /* PushOutBlockTests */ = {
+			isa = PBXGroup;
+			children = (
+				16EC69641CFACBEE00708292 /* PushOutBlockTests.swift */,
+				16EC69661CFACBEE00708292 /* Info.plist */,
+			);
+			path = PushOutBlockTests;
+			sourceTree = "<group>";
+		};
+		16EC696E1CFACBEE00708292 /* PushOutBlockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				16EC696F1CFACBEE00708292 /* PushOutBlockUITests.swift */,
+				16EC69711CFACBEE00708292 /* Info.plist */,
+			);
+			path = PushOutBlockUITests;
+			sourceTree = "<group>";
+		};
+		16EC697D1CFADAF000708292 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				16EC69801CFADC0F00708292 /* GameViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		16EC69471CFACBEE00708292 /* PushOutBlock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16EC69741CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlock" */;
+			buildPhases = (
+				16EC69441CFACBEE00708292 /* Sources */,
+				16EC69451CFACBEE00708292 /* Frameworks */,
+				16EC69461CFACBEE00708292 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PushOutBlock;
+			productName = PushOutBlock;
+			productReference = 16EC69481CFACBEE00708292 /* PushOutBlock.app */;
+			productType = "com.apple.product-type.application";
+		};
+		16EC695F1CFACBEE00708292 /* PushOutBlockTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16EC69771CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockTests" */;
+			buildPhases = (
+				16EC695C1CFACBEE00708292 /* Sources */,
+				16EC695D1CFACBEE00708292 /* Frameworks */,
+				16EC695E1CFACBEE00708292 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16EC69621CFACBEE00708292 /* PBXTargetDependency */,
+			);
+			name = PushOutBlockTests;
+			productName = PushOutBlockTests;
+			productReference = 16EC69601CFACBEE00708292 /* PushOutBlockTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		16EC696A1CFACBEE00708292 /* PushOutBlockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16EC697A1CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockUITests" */;
+			buildPhases = (
+				16EC69671CFACBEE00708292 /* Sources */,
+				16EC69681CFACBEE00708292 /* Frameworks */,
+				16EC69691CFACBEE00708292 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				16EC696D1CFACBEE00708292 /* PBXTargetDependency */,
+			);
+			name = PushOutBlockUITests;
+			productName = PushOutBlockUITests;
+			productReference = 16EC696B1CFACBEE00708292 /* PushOutBlockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		16EC69401CFACBEE00708292 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Takashi Ikeda";
+				TargetAttributes = {
+					16EC69471CFACBEE00708292 = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 2ZM248T9PV;
+					};
+					16EC695F1CFACBEE00708292 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 16EC69471CFACBEE00708292;
+					};
+					16EC696A1CFACBEE00708292 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 16EC69471CFACBEE00708292;
+					};
+				};
+			};
+			buildConfigurationList = 16EC69431CFACBEE00708292 /* Build configuration list for PBXProject "PushOutBlock" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 16EC693F1CFACBEE00708292;
+			productRefGroup = 16EC69491CFACBEE00708292 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				16EC69471CFACBEE00708292 /* PushOutBlock */,
+				16EC695F1CFACBEE00708292 /* PushOutBlockTests */,
+				16EC696A1CFACBEE00708292 /* PushOutBlockUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		16EC69461CFACBEE00708292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16EC694E1CFACBEE00708292 /* GameScene.sks in Resources */,
+				16EC695A1CFACBEE00708292 /* LaunchScreen.storyboard in Resources */,
+				16EC69571CFACBEE00708292 /* Assets.xcassets in Resources */,
+				16EC69551CFACBEE00708292 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC695E1CFACBEE00708292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC69691CFACBEE00708292 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		16EC69441CFACBEE00708292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16EC69811CFADC0F00708292 /* GameViewController.swift in Sources */,
+				16EC69501CFACBEE00708292 /* GameScene.swift in Sources */,
+				16EC694C1CFACBEE00708292 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC695C1CFACBEE00708292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16EC69651CFACBEE00708292 /* PushOutBlockTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		16EC69671CFACBEE00708292 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16EC69701CFACBEE00708292 /* PushOutBlockUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		16EC69621CFACBEE00708292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16EC69471CFACBEE00708292 /* PushOutBlock */;
+			targetProxy = 16EC69611CFACBEE00708292 /* PBXContainerItemProxy */;
+		};
+		16EC696D1CFACBEE00708292 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 16EC69471CFACBEE00708292 /* PushOutBlock */;
+			targetProxy = 16EC696C1CFACBEE00708292 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		16EC69531CFACBEE00708292 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16EC69541CFACBEE00708292 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		16EC69581CFACBEE00708292 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				16EC69591CFACBEE00708292 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		16EC69721CFACBEE00708292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		16EC69731CFACBEE00708292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		16EC69751CFACBEE00708292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PushOutBlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		16EC69761CFACBEE00708292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = PushOutBlock/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlock;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		16EC69781CFACBEE00708292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PushOutBlockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushOutBlock.app/PushOutBlock";
+			};
+			name = Debug;
+		};
+		16EC69791CFACBEE00708292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PushOutBlockTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlockTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PushOutBlock.app/PushOutBlock";
+			};
+			name = Release;
+		};
+		16EC697B1CFACBEE00708292 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				INFOPLIST_FILE = PushOutBlockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PushOutBlock;
+			};
+			name = Debug;
+		};
+		16EC697C1CFACBEE00708292 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PushOutBlockUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jp.cafe.PushOutBlockUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PushOutBlock;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16EC69431CFACBEE00708292 /* Build configuration list for PBXProject "PushOutBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16EC69721CFACBEE00708292 /* Debug */,
+				16EC69731CFACBEE00708292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16EC69741CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16EC69751CFACBEE00708292 /* Debug */,
+				16EC69761CFACBEE00708292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16EC69771CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16EC69781CFACBEE00708292 /* Debug */,
+				16EC69791CFACBEE00708292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		16EC697A1CFACBEE00708292 /* Build configuration list for PBXNativeTarget "PushOutBlockUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16EC697B1CFACBEE00708292 /* Debug */,
+				16EC697C1CFACBEE00708292 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 16EC69401CFACBEE00708292 /* Project object */;
+}
