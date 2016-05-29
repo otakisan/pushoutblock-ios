@@ -16,6 +16,8 @@ class GameScene: SKScene {
         case Ball = 2
     }
     
+    var gameSceneDelegate : GameSceneDelegate?
+    
     var trialCount = 0
     var trialsLabel : SKLabelNode? {
         get {
@@ -242,6 +244,8 @@ class GameScene: SKScene {
                 (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "WonMessage".localized(["\(self.trialCount)"])
                 self.trialCount = 0
                 self.trialsLabel?.text = "\(self.trialCount)"
+                
+                self.gameSceneDelegate?.didClear()
             }
         }
         
@@ -282,4 +286,8 @@ extension GameScene : SKPhysicsContactDelegate {
         //            secondBody.node?.removeFromParent()
         //        }
     }
+}
+
+protocol GameSceneDelegate {
+    func didClear()
 }

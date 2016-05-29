@@ -8,13 +8,22 @@
 
 import UIKit
 import SpriteKit
+import GoogleMobileAds
 
 class GameViewController: UIViewController {
-
+    
+    var isShowAd = false
+    var interstitial : GADInterstitial?
+    var prevDidClearTime = NSDate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loadAd()
 
         if let scene = GameScene(fileNamed:"GameScene") {
+            scene.gameSceneDelegate = self
+            
             // Configure the view.
             let skView = self.view as! SKView
 //            skView.showsFPS = true
@@ -30,6 +39,14 @@ class GameViewController: UIViewController {
         }
     }
 
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.initAnalysisTracker("ゲームプレイ")
+        
+        self.showAd()
+    }
+    
     override func shouldAutorotate() -> Bool {
         return true
     }
@@ -49,5 +66,50 @@ class GameViewController: UIViewController {
 
     override func prefersStatusBarHidden() -> Bool {
         return true
+    }
+    
+    @objc private func reloadAd() {
+        self.loadAd()
+    }
+    
+    private func loadAd() {
+        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3119454746977531/4383253606")
+        let gadRequest = GADRequest()
+        self.interstitial?.loadRequest(gadRequest)
+        self.interstitial?.delegate = self
+    }
+    
+    private func showAd() {
+        if self.isShowAd && self.interstitial!.isReady {
+            self.interstitial?.presentFromRootViewController(self)
+        }
+    }
+}
+
+extension GameViewController : GADInterstitialDelegate {
+    func interstitialDidDismissScreen(ad: GADInterstitial!){
+        self.loadAd()
+    }
+    
+    func interstitialWillPresentScreen(ad: GADInterstitial!) {
+        self.isShowAd = false
+    }
+    
+    func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!){
+        print(error)
+        NSTimer.scheduledTimerWithTimeInterval(4.0, target: self, selector: #selector(GameViewController.reloadAd), userInfo: nil, repeats: true)
+    }
+}
+
+extension GameViewController : GameSceneDelegate {
+    func didClear() {
+        let now = NSDate()
+        let interval = now.timeIntervalSinceDate(self.prevDidClearTime)
+        if interval > 60 {
+            self.isShowAd = true
+            self.showAd()
+            self.prevDidClearTime = now
+        }
+        
     }
 }
