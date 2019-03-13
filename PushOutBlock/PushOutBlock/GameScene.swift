@@ -21,17 +21,17 @@ class GameScene: SKScene {
     var trialCount = 0
     var trialsLabel : SKLabelNode? {
         get {
-            return self.childNodeWithName("trialsLabel") as? SKLabelNode
+            return self.childNode(withName: "trialsLabel") as? SKLabelNode
         }
     }
     
     var cueBlock : SKSpriteNode? {
         get {
-            return self.childNodeWithName("moveNode") as? SKSpriteNode
+            return self.childNode(withName: "moveNode") as? SKSpriteNode
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         
         // 物理衝突のハンドリング
         self.physicsWorld.contactDelegate = self
@@ -41,7 +41,7 @@ class GameScene: SKScene {
         //myLabel.text = "Push out the Orange Block! \n 1 Shot Only by swiping up the blue block !"
         myLabel.text = "swipe up the blue!".localized()
         myLabel.fontSize = 100
-        myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
+        myLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY)
         myLabel.position.y -= myLabel.frame.size.height * 2
         myLabel.name = "panDataLabel"
         self.addChild(myLabel)
@@ -50,7 +50,7 @@ class GameScene: SKScene {
         let trialsLabel = SKLabelNode(fontNamed:"Chalkduster")
         trialsLabel.text = "\(self.trialCount)"
         trialsLabel.fontSize = 360
-        trialsLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame) + myLabel.frame.size.height)
+        trialsLabel.position = CGPoint(x:self.frame.midX, y:self.frame.midY + myLabel.frame.size.height)
         trialsLabel.name = "trialsLabel"
         self.addChild(trialsLabel)
         
@@ -67,12 +67,12 @@ class GameScene: SKScene {
         
         
         // ぶつける対象
-        let targetNode = SKSpriteNode(color: UIColor.orangeColor(), size: CGSize(width: 200, height: 200))
+        let targetNode = SKSpriteNode(color: UIColor.orange, size: CGSize(width: 200, height: 200))
         targetNode.position = CGPoint(x: targetRamdom.nextInt(), y: 1500)
         targetNode.name = "targetNode"
-        targetNode.physicsBody = SKPhysicsBody(rectangleOfSize: targetNode.size)
+        targetNode.physicsBody = SKPhysicsBody(rectangleOf: targetNode.size)
         targetNode.physicsBody?.categoryBitMask = ContactCategory.Target.rawValue
-        //targetNode.physicsBody?.contactTestBitMask = ContactCategory.Ball.rawValue
+//        targetNode.physicsBody?.contactTestBitMask = ContactCategory.Ball.rawValue
         targetNode.physicsBody?.affectedByGravity = false
         //targetNode.physicsBody?.dynamic = false
         self.addChild(targetNode)
@@ -89,7 +89,7 @@ class GameScene: SKScene {
         self.view?.addGestureRecognizer(gesture)
         
         // 物理演算
-        moveNode.physicsBody = SKPhysicsBody(rectangleOfSize: moveNode.size)
+        moveNode.physicsBody = SKPhysicsBody(rectangleOf: moveNode.size)
         // falseにしないと落ちる
         moveNode.physicsBody?.affectedByGravity = false
         // 自分が所蔵するカテゴリ
@@ -104,16 +104,16 @@ class GameScene: SKScene {
     
     // 指で上に強めにスワイプしたら移動するサンプル
     var isBeginAtMoveNode = false
-    func panNode(sender : UIPanGestureRecognizer) {
+    @objc func panNode(_ sender : UIPanGestureRecognizer) {
         var logtext = ""
         
         //retrieve pan movement along the x-axis of the view since the gesture began
-        let currentTranslateLocation = sender.locationInView(self.view)
-        let currentTranslateTranslation = sender.translationInView(view!)
-        let currentTranslateVelocity = sender.velocityInView(self.view)
+        let currentTranslateLocation = sender.location(in: self.view)
+        let currentTranslateTranslation = sender.translation(in: view!)
+        let currentTranslateVelocity = sender.velocity(in: self.view)
         
-        let currentTranslatePositionConverted = self.convertPointFromView(currentTranslateLocation)
-        let currentTranslateVelocityConverted = self.convertPointFromView(currentTranslateVelocity)
+        let currentTranslatePositionConverted = self.convertPoint(fromView: currentTranslateLocation)
+        let currentTranslateVelocityConverted = self.convertPoint(fromView: currentTranslateVelocity)
         
         logtext = "currentTranslateLocation:\(currentTranslateLocation) currentTranslateVelocity:\(currentTranslateVelocity) currentTranslatePositionConverted:\(currentTranslatePositionConverted) currentTranslateVelocityConverted:\(currentTranslateVelocityConverted)"
         
@@ -132,20 +132,20 @@ class GameScene: SKScene {
         //        }
         
         //(re-)set previous measurement
-        if sender.state == .Ended {
+        if sender.state == .ended {
             //previousTranslateX = 0
             logtext += " Ended"
             if self.isBeginAtMoveNode && currentTranslateVelocityConverted.y > 2000 {
                 //self.childNodeWithName("moveNode")?.position.y += 100
                 //self.moveTo(self.childNodeWithName("moveNode")!, to: self.childNodeWithName("targetNode")!)
-                self.moveBy(self.childNodeWithName("moveNode")!, dx: currentTranslateVelocityConverted.x, dy: currentTranslateVelocityConverted.y)
-                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Fire !".localized()
+                self.moveBy(from: self.childNode(withName: "moveNode")!, dx: currentTranslateVelocityConverted.x, dy: currentTranslateVelocityConverted.y)
+                (self.childNode(withName: "panDataLabel") as? SKLabelNode)?.text = "Fire !".localized()
                 
             }
             
             self.isBeginAtMoveNode = false
         }
-        else if sender.state == .Began {
+        else if sender.state == .began {
             //self.isBeginAtMoveNode = self.nodeAtPoint(currentTranslatePositionConverted).name == "moveNode"
         }
         else {
@@ -159,34 +159,34 @@ class GameScene: SKScene {
     }
     
     private func moveTo(from : SKNode, to : SKNode) {
-        let action = SKAction.moveTo(to.position, duration: 1)
-        action.timingMode = .EaseIn
-        from.runAction(action)
+        let action = SKAction.move(to: to.position, duration: 1)
+        action.timingMode = .easeIn
+        from.run(action)
     }
     
     private func moveBy(from : SKNode, dx : CGFloat, dy : CGFloat) {
         
-        let action = SKAction.moveBy(CGVector(dx: dx, dy: dy), duration: 1)
-        action.timingMode = .EaseIn
-        from.runAction(action)
+        let action = SKAction.move(by: CGVector(dx: dx, dy: dy), duration: 1)
+        action.timingMode = .easeIn
+        from.run(action)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         /* Called when a touch begins */
         
         for touch in touches {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             // 移動させる対象のノードでタッチを開始したか
-            self.isBeginAtMoveNode = self.nodeAtPoint(location).name == "moveNode"
+            self.isBeginAtMoveNode = self.atPoint(location).name == "moveNode"
             
-            //            let sprite = self.nodeAtPoint(location)
-            //            sprite.position = location
-            //            rotationNode(sprite)
+//            let sprite = self.atPoint(location)
+//            sprite.position = location
+//            rotationNode(node: sprite)
         }
     }
     
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         removeMovingNodeIfOutOfSceneAndCreateMovingNode()
     }
@@ -204,8 +204,8 @@ class GameScene: SKScene {
         // 領域外のノードを取り除くのも、ひとつの機能（Component）だから、
         // 本番で作るときは、GKComponentで処理する
         // あとは、Stateがからむかどうかだけど…
-        if let moveNode = self.childNodeWithName("moveNode") {
-            if !moveNode.intersectsNode(self) {
+        if let moveNode = self.childNode(withName: "moveNode") {
+            if !moveNode.intersects(self) {
                 moveNode.removeAllActions()
                 
                 // 除去＆作成だとなんか、touchesBeganでアニメーション止まるくらい遅く？なる影響あり
@@ -214,8 +214,8 @@ class GameScene: SKScene {
                 //                self.removeChildrenInArray([moveNode])
                 //                createAndAddMovingNode()
                 
-                if (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text == "Fire !".localized() {
-                    (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Missed !".localized()
+                if (self.childNode(withName: "panDataLabel") as? SKLabelNode)?.text == "Fire !".localized() {
+                    (self.childNode(withName: "panDataLabel") as? SKLabelNode)?.text = "Missed !".localized()
                 }
                 
                 self.trialCount += 1
@@ -223,10 +223,10 @@ class GameScene: SKScene {
             }
         }
         
-        if let targetNode = self.childNodeWithName("targetNode") {
+        if let targetNode = self.childNode(withName: "targetNode") {
             // 外に出る順番が、ターゲット→持ち球の順になるため、カウンターのリセットが難しい
             // ターゲットが外に出たら
-            if !targetNode.intersectsNode(self) {
+            if !targetNode.intersects(self) {
                 targetNode.removeAllActions()
                 //targetNode.removeFromParent()
                 targetNode.position = CGPoint(x: targetRamdom.nextInt(), y: 1500)
@@ -241,7 +241,7 @@ class GameScene: SKScene {
                 }
                 resetPositionMovingBlock()
                 
-                (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "WonMessage".localized(["\(self.trialCount)"])
+                (self.childNode(withName: "panDataLabel") as? SKLabelNode)?.text = "WonMessage".localized(args : ["\(self.trialCount)"])
                 self.trialCount = 0
                 self.trialsLabel?.text = "\(self.trialCount)"
                 
@@ -256,15 +256,15 @@ class GameScene: SKScene {
         sprite.xScale = 1.1
         sprite.yScale = 1.1
         
-        let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+        let action = SKAction.rotate(byAngle: CGFloat(M_PI), duration:1)
         
         // なんか足し込めるらしく、何回もタップすると、回転が早くなる。
-        sprite.runAction(SKAction.repeatActionForever(action))
+        sprite.run(SKAction.repeatForever(action))
     }
 }
 
 extension GameScene : SKPhysicsContactDelegate {
-    func didBeginContact(contact: SKPhysicsContact) {
+    func didBegin(_ contact: SKPhysicsContact) {
         
         let firstBody: SKPhysicsBody
         let secondBody: SKPhysicsBody
@@ -276,10 +276,10 @@ extension GameScene : SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
-        (self.childNodeWithName("panDataLabel") as? SKLabelNode)?.text = "Hit !".localized()
+        (self.childNode(withName: "panDataLabel") as? SKLabelNode)?.text = "Hit !".localized()
         if let node = firstBody.node {
             // 回転して、衝突して、回転して、衝突して、…を細かく繰り返し、ぎりぎり衝突しないところまで続く。
-            rotationNode(node)
+            rotationNode(node: node)
         }
         
         //        if firstBody.categoryBitMask & ContactCategory.Target.rawValue > 0 && secondBody.categoryBitMask & ContactCategory.Ball.rawValue > 0 {

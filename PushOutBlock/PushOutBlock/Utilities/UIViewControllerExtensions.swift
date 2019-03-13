@@ -11,8 +11,8 @@ import UIKit
 extension UIViewController {
     
     func initAnalysisTracker(screenName : String) {
-        let tracker = GAI.sharedInstance().defaultTracker
-        tracker.set(kGAIScreenName, value: screenName)
-        tracker.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject])
+//        let tracker = GAI.sharedInstance().defaultTracker
+//        tracker?.set(kGAIScreenName, value: screenName)
+//        tracker!.send(GAIDictionaryBuilder.createScreenView().build() as [NSObject : AnyObject])
     }
 }

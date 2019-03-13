@@ -33,29 +33,31 @@ class GameViewController: UIViewController {
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .aspectFill
             
             skView.presentScene(scene)
         }
     }
 
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.initAnalysisTracker("ゲームプレイ")
+        self.initAnalysisTracker(screenName: "ゲームプレイ")
         
         self.showAd()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate: Bool {
+        get {
+            return false
+        }
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
         } else {
-            return .All
+            return .all
         }
     }
 
@@ -64,7 +66,7 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden: Bool {
         return true
     }
     
@@ -75,13 +77,13 @@ class GameViewController: UIViewController {
     private func loadAd() {
         self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3119454746977531/4383253606")
         let gadRequest = GADRequest()
-        self.interstitial?.loadRequest(gadRequest)
+        self.interstitial?.load(gadRequest)
         self.interstitial?.delegate = self
     }
     
     private func showAd() {
         if self.isShowAd && self.interstitial!.isReady {
-            self.interstitial?.presentFromRootViewController(self)
+            self.interstitial?.present(fromRootViewController: self)
         }
     }
 }
@@ -97,14 +99,14 @@ extension GameViewController : GADInterstitialDelegate {
     
     func interstitial(ad: GADInterstitial!, didFailToReceiveAdWithError error: GADRequestError!){
         print(error)
-        NSTimer.scheduledTimerWithTimeInterval(4.0, target: self, selector: #selector(GameViewController.reloadAd), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(GameViewController.reloadAd), userInfo: nil, repeats: true)
     }
 }
 
 extension GameViewController : GameSceneDelegate {
     func didClear() {
         let now = NSDate()
-        let interval = now.timeIntervalSinceDate(self.prevDidClearTime)
+        let interval = now.timeIntervalSince(self.prevDidClearTime as Date)
         if interval > 60 {
             self.isShowAd = true
             self.showAd()
